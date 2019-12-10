@@ -23,7 +23,7 @@ if (!eventPayload || !eventPayload.pull_request) {
 
 // https://developer.github.com/v3/pulls/
 const payloadPullRequest = eventPayload.pull_request;
-const payloadPullRequestId = payloadPullRequest.number; // Ex: 5
+const payloadPullRequestNumber = payloadPullRequest.number; // Ex: 5
 const payloadPullRequestAuthor = payloadPullRequest.user.login; // Ex: tiblu
 const payloadBase = payloadPullRequest.base; // Branch where the PR was requested. Ex: master
 const payloadFrom = payloadPullRequest.head; // Branch from which the PR was created (head). Ex: l10n_mater
@@ -66,7 +66,7 @@ const runAction = async () => {
     const {data: branchCreated} = await octokit.git.createRef({
         owner: envOwner,
         repo: envRepo,
-        ref: `refs/heads/pr_duplicator_${branchFrom.name}_${payloadPullRequestId}`,
+        ref: `refs/heads/pr_duplicator_${branchFrom.name}_${payloadPullRequestNumber}`,
         sha: branchFrom.commit.sha
     });
 
@@ -81,6 +81,17 @@ const runAction = async () => {
         head: branchCreated.ref,
         base: confTo
     });
+
+    // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
+    // https://developer.github.com/v3/issues/comments/#create-a-comment
+    // https://developer.github.com/v3/guides/working-with-comments/#pull-request-comments - PR is just a type of issue, thus issue comments API is used.
+    await octokit.issues.createComment({
+        owner: envOwner,
+        repo: envRepo,
+        issue_number: payloadPullRequestNumber,
+        body: `AUTO: PR-Duplicator - A pull request was automatically created after merging this one. NEW PR: ${pullRequestCreated.html_url}`
+    });
+
 
     // https://api.slack.com/messaging/webhooks
     // https://api.slack.com/tools/block-kit-builder
