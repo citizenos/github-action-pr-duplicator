@@ -29,7 +29,7 @@ const payloadBase = payloadPullRequest.base; // Branch where the PR was requeste
 const payloadFrom = payloadPullRequest.head; // Branch from which the PR was created (head). Ex: l10n_mater
 
 if (payloadFrom.ref !== confFrom || payloadBase.ref !== confBase) {
-    return core.info(`SKIP! Skipping Action as the configured "from" and "base" ("${confFrom}","${confBase}") don't match the event payload ("${payloadFrom}","${payloadBase}")`);
+    return core.info(`SKIP! Skipping Action as the configured "from" and "base" ("${confFrom}","${confBase}") don't match the event payload ("${payloadFrom.ref}","${payloadBase.ref}")`);
 }
 
 if (confPrAuthor && payloadPullRequestAuthor !== confPrAuthor) {
