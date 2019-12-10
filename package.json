@@ -1,0 +1,29 @@
+{
+  "name": "github-action-pr-duplicator",
+  "version": "0.0.1",
+  "description": "GitHub Action to duplicate pull requests (PR). Initially designed to enable localisation team release translations safely.",
+  "homepage": "https://github.com/citizenos/github-action-pr-duplicator",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/citizenos/github-action-pr-duplicator.git"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@actions/core": "1.2.0",
+    "@actions/github": "1.1.0",
+    "@octokit/rest": "16.35.0",
+    "superagent": "5.1.2"
+  },
+  "devDependencies": {
+    "eslint": "6.7.2"
+  },
+  "bugs": {
+    "url": "https://github.com/citizenos/github-action-pr-duplicator/issues"
+  },
+  "author": "",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  }
+}

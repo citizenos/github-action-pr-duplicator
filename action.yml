@@ -1,0 +1,27 @@
+name: 'PR Duplicator'
+description: 'Duplicate a PR to another branch. Checks if there is a PR to "from" branch to "base" branch, IF there is, create a new branch from the "from" and from that a PR to "to".'
+inputs:
+  from:
+    description: 'From which branch the PR is expected to be which is about to be duplicated.'
+    required: true
+    default: 'l10n_master'
+  base:
+    description: 'To which branch the original PR is expected to be which is about to be duplicated.'
+    required: true
+    default: 'master'
+  to:
+    description: 'To which branch the PR is expected to be created is about to be duplicated. So the new PR is from "from" to "to".'
+    required: true
+    default: 'prod'
+  github-token:
+    description: 'GitHub token to make GitHub API calls'
+    required: true
+  pr-author:
+    description: 'Username of the author of the PR whos PRs are allowed to be duplicated. IF not present, all authorsare valid.'
+    required: false
+  slack-incoming-webhook-url:
+    description: 'Slack incoming webhook url to notify about GitHub Action run. Read more - https://api.slack.com/messaging/webhooks'
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
