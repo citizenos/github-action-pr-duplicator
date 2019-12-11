@@ -12,7 +12,6 @@
   "dependencies": {
     "@actions/core": "1.2.0",
     "@actions/github": "1.1.0",
-    "@octokit/rest": "16.35.0",
     "superagent": "5.1.2"
   },
   "devDependencies": {

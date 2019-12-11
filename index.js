@@ -4,7 +4,7 @@ const core = require('@actions/core');
 const { GitHub, context } = require('@actions/github');
 const superagent = require('superagent');
 
-core.debug(`PR Duplicator - Context ${context}`);
+core.debug(`PR Duplicator - Context ${JSON.stringify(context, null, 2)}`);
 
 const envOwner = context.repo.owner;
 const envRepo = context.repo.repo;
@@ -59,6 +59,8 @@ const runAction = async () => {
         branch: payloadFrom.ref
     });
 
+    core.debug(`branchFrom - ${JSON.stringify(branchFrom, null, 2)}`);
+
     // Create a new branch from the state in the branch which PR just got closed/merged.
     // Creating a new branch so that it's guaranteed to have same set of changes that were merged with PR (payloadPullRequest)
     // https://octokit.github.io/rest.js/#octokit-routes-git-create-ref
@@ -69,6 +71,8 @@ const runAction = async () => {
         ref: `refs/heads/pr_duplicator_${branchFrom.name}_${payloadPullRequestNumber}`,
         sha: branchFrom.commit.sha
     });
+
+    core.debug(`branchCreated - ${JSON.stringify(branchCreated, null, 2)}`);
 
     // Create a PR from the freshly created branch to "to"
     // https://octokit.github.io/rest.js/#octokit-routes-pulls-create
@@ -82,16 +86,19 @@ const runAction = async () => {
         base: confTo
     });
 
+    core.debug(`pullRequestCreated - ${JSON.stringify(pullRequestCreated, null, 2)}`);
+
     // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
     // https://developer.github.com/v3/issues/comments/#create-a-comment
     // https://developer.github.com/v3/guides/working-with-comments/#pull-request-comments - PR is just a type of issue, thus issue comments API is used.
-    await octokit.issues.createComment({
+    const {data: commentCreated} = await octokit.issues.createComment({
         owner: envOwner,
         repo: envRepo,
         issue_number: payloadPullRequestNumber,
         body: `AUTO: PR-Duplicator - A pull request was automatically created after merging this one. NEW PR: ${pullRequestCreated.html_url}`
     });
 
+    core.debug(`commentCreated - ${JSON.stringify(commentCreated, null, 2)}`);
 
     // https://api.slack.com/messaging/webhooks
     // https://api.slack.com/tools/block-kit-builder
@@ -124,7 +131,7 @@ const runAction = async () => {
                 ]
             });
         } catch (err) {
-            core.warning('SLACK NOTIFICATION FAILED!', err);
+            core.warning(`SLACK NOTIFICATION FAILED! ${JSON.stringify(err, null, 2)}`);
         }
     }
 
@@ -136,7 +143,7 @@ runAction()
         core.info('OK!');
     })
     .catch(async (err) => {
-        core.error(`ERROR ${err} ${context}`);
+        core.error(`ERROR ${JSON.stringify(err, null, 2)} ${JSON.stringify(context, null, 2)}`);
 
         if (confSlackIncomingWebhookUrl) {
             try {
@@ -159,7 +166,7 @@ runAction()
                     ]
                 });
             } catch (err) {
-                core.warning('SLACK NOTIFICATION FAILED!', err);
+                core.warning(`SLACK NOTIFICATION FAILED! ${JSON.stringify(err, null, 2)}`);
             }
         }
 
