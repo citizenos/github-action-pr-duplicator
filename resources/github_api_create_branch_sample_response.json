@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/pr_duplicator_l10n_master_368",
+  "node_id": "MDM6UmVmNjg0NDk5NzU6cHJfZHVwbGljYXRvcl9sMTBuX21hc3Rlcl8zNjg=",
+  "url": "https://api.github.com/repos/citizenos/citizenos-fe/git/refs/heads/pr_duplicator_l10n_master_368",
+  "object": {
+    "sha": "75809958a3ae3673765e6d194288cb05b4feda9a",
+    "type": "commit",
+    "url": "https://api.github.com/repos/citizenos/citizenos-fe/git/commits/75809958a3ae3673765e6d194288cb05b4feda9a"
+  }
+}

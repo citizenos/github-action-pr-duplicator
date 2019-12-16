@@ -1,0 +1,31 @@
+{
+  "url": "https://api.github.com/repos/citizenos/citizenos-fe/issues/comments/566001052",
+  "html_url": "https://github.com/citizenos/citizenos-fe/pull/368#issuecomment-566001052",
+  "issue_url": "https://api.github.com/repos/citizenos/citizenos-fe/issues/368",
+  "id": 566001052,
+  "node_id": "MDEyOklzc3VlQ29tbWVudDU2NjAwMTA1Mg==",
+  "user": {
+    "login": "github-actions[bot]",
+    "id": 41898282,
+    "node_id": "MDM6Qm90NDE4OTgyODI=",
+    "avatar_url": "https://avatars2.githubusercontent.com/in/15368?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+    "html_url": "https://github.com/apps/github-actions",
+    "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+    "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+    "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+    "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+    "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+    "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+    "type": "Bot",
+    "site_admin": false
+  },
+  "created_at": "2019-12-16T10:30:17Z",
+  "updated_at": "2019-12-16T10:30:17Z",
+  "author_association": "NONE",
+  "body": "AUTO: PR-Duplicator - A pull request was automatically created after merging this one. NEW PR: https://github.com/citizenos/citizenos-fe/pull/369"
+}

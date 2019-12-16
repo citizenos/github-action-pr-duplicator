@@ -1,0 +1,95 @@
+{
+  "name": "l10n_master",
+  "commit": {
+    "sha": "75809958a3ae3673765e6d194288cb05b4feda9a",
+    "node_id": "MDY6Q29tbWl0Njg0NDk5NzU6NzU4MDk5NThhM2FlMzY3Mzc2NWU2ZDE5NDI4OGNiMDViNGZlZGE5YQ==",
+    "commit": {
+      "author": {
+        "name": "tiblu",
+        "email": "tiblu@users.noreply.github.com",
+        "date": "2019-12-16T10:27:04Z"
+      },
+      "committer": {
+        "name": "tiblu",
+        "email": "tiblu@users.noreply.github.com",
+        "date": "2019-12-16T10:27:04Z"
+      },
+      "message": "New translations en.json (Afar)",
+      "tree": {
+        "sha": "2cf9e2757b5bb0da9f751e9011da1a7d207edada",
+        "url": "https://api.github.com/repos/citizenos/citizenos-fe/git/trees/2cf9e2757b5bb0da9f751e9011da1a7d207edada"
+      },
+      "url": "https://api.github.com/repos/citizenos/citizenos-fe/git/commits/75809958a3ae3673765e6d194288cb05b4feda9a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/citizenos/citizenos-fe/commits/75809958a3ae3673765e6d194288cb05b4feda9a",
+    "html_url": "https://github.com/citizenos/citizenos-fe/commit/75809958a3ae3673765e6d194288cb05b4feda9a",
+    "comments_url": "https://api.github.com/repos/citizenos/citizenos-fe/commits/75809958a3ae3673765e6d194288cb05b4feda9a/comments",
+    "author": {
+      "login": "tiblu",
+      "id": 7405383,
+      "node_id": "MDQ6VXNlcjc0MDUzODM=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7405383?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tiblu",
+      "html_url": "https://github.com/tiblu",
+      "followers_url": "https://api.github.com/users/tiblu/followers",
+      "following_url": "https://api.github.com/users/tiblu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tiblu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tiblu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tiblu/subscriptions",
+      "organizations_url": "https://api.github.com/users/tiblu/orgs",
+      "repos_url": "https://api.github.com/users/tiblu/repos",
+      "events_url": "https://api.github.com/users/tiblu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tiblu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "tiblu",
+      "id": 7405383,
+      "node_id": "MDQ6VXNlcjc0MDUzODM=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7405383?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tiblu",
+      "html_url": "https://github.com/tiblu",
+      "followers_url": "https://api.github.com/users/tiblu/followers",
+      "following_url": "https://api.github.com/users/tiblu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tiblu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tiblu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tiblu/subscriptions",
+      "organizations_url": "https://api.github.com/users/tiblu/orgs",
+      "repos_url": "https://api.github.com/users/tiblu/repos",
+      "events_url": "https://api.github.com/users/tiblu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tiblu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "df25fb385ada6a45ab35ebf3ef333d59e945ec18",
+        "url": "https://api.github.com/repos/citizenos/citizenos-fe/commits/df25fb385ada6a45ab35ebf3ef333d59e945ec18",
+        "html_url": "https://github.com/citizenos/citizenos-fe/commit/df25fb385ada6a45ab35ebf3ef333d59e945ec18"
+      }
+    ]
+  },
+  "_links": {
+    "self": "https://api.github.com/repos/citizenos/citizenos-fe/branches/l10n_master",
+    "html": "https://github.com/citizenos/citizenos-fe/tree/l10n_master"
+  },
+  "protected": false,
+  "protection": {
+    "enabled": false,
+    "required_status_checks": {
+      "enforcement_level": "off",
+      "contexts": []
+    }
+  },
+  "protection_url": "https://api.github.com/repos/citizenos/citizenos-fe/branches/l10n_master/protection"
+}

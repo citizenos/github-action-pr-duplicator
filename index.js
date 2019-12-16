@@ -51,16 +51,6 @@ const runAction = async () => {
     // https://github.com/actions/toolkit/tree/master/packages/github
     const octokit = new GitHub(confGithubToken);
 
-    // https://octokit.github.io/rest.js/#octokit-routes-repos-get-branch
-    // https://developer.github.com/v3/repos/branches/#get-branch
-    const {data: branchFrom} = await octokit.repos.getBranch({
-        owner: envOwner,
-        repo: envRepo,
-        branch: payloadFrom.ref
-    });
-
-    core.debug(`branchFrom - ${JSON.stringify(branchFrom, null, 2)}`);
-
     // Create a new branch from the state in the branch which PR just got closed/merged.
     // Creating a new branch so that it's guaranteed to have same set of changes that were merged with PR (payloadPullRequest)
     // https://octokit.github.io/rest.js/#octokit-routes-git-create-ref
@@ -68,8 +58,8 @@ const runAction = async () => {
     const {data: branchCreated} = await octokit.git.createRef({
         owner: envOwner,
         repo: envRepo,
-        ref: `refs/heads/pr_duplicator_${branchFrom.name}_${payloadPullRequestNumber}`,
-        sha: branchFrom.commit.sha
+        ref: `refs/heads/pr_duplicator_${payloadFrom.ref}_${payloadPullRequestNumber}`,
+        sha: payloadPullRequest.merge_commit_sha
     });
 
     core.debug(`branchCreated - ${JSON.stringify(branchCreated, null, 2)}`);
