@@ -108,7 +108,7 @@ const runAction = async () => {
                         type: 'section',
                         text: {
                             type: 'mrkdwn',
-                            text: `Duplicated PR: ${payloadPullRequest.html_url}`
+                            text: `Merged PR: ${payloadPullRequest.html_url}`
                         }
                     },
                     {
